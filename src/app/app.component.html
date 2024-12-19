@@ -20,7 +20,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" (click)="onLoadAdmin()">Admin</a>
+          <a class="nav-link" [ngStyle]= "{'cursor': 'pointer'}" (click)="onLoadAdmin()">Admin</a>
         </li>
 
         <li class="nav-item">
@@ -31,10 +31,10 @@
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Juegos con imagenes</a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" routerLink="/imagenes/diferencias">Diferencias</a>
+              <a class="dropdown-item" (click) = "diferencias()" routerLink="/imagenes/diferencias">Diferencias</a>
             </li>
             <li>
-              <a class="dropdown-item" routerLink="//imagenes/peliculas">Peliculas</a>
+              <a class="dropdown-item" (click) = "peliculas()" routerLink="//imagenes/peliculas">Peliculas</a>
             </li>
           </ul>
         </li>

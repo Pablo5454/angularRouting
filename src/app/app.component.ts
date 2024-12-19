@@ -1,3 +1,4 @@
+import { ServiceImageService } from './services/service-image.service';
 import { Component, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,8 +10,9 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'angularRouting';
   opcion:boolean=false;
+  valor:boolean=true;
 
-  constructor(private router:Router){}
+  constructor(private router:Router, private serviceImageService: ServiceImageService){}
     public onLoadAdmin(){
       this.opcion = confirm("¿Eres el administrador?");
       if (this.opcion == true){
@@ -19,5 +21,14 @@ export class AppComponent {
         this.router.navigate(['home']);
       }
     }
-  
+    peliculas(){
+      this.valor=false;
+      this.serviceImageService.setValor(this.valor);
+      this.router.navigate(['imagenes/peliculas']);
+    }
+    diferencias(){
+      this.valor=false;
+      this.serviceImageService.setValor(this.valor);
+      this.router.navigate(['imagenes/diferencias']);
+    }
 }
